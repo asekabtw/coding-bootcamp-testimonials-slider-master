@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+$main-text: hsl(240, 38%, 20%);
+$subtitle: hsl(240, 18%, 77%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(/images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 80%;
+
+    &__wrapper {
+        width: 90%;
+        min-height: 85vh;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    .content {
+        &__wrapper {
+            width: 80%;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.slider {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    background-color: transparent;
+    padding: 2.5em;
+
+    background-image: url(/images/pattern-bg.svg);
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    &__wrapper {
+        position: relative;
+    }
+
+    &__img {
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 20px 50px -10px rgba(#000, 0.45);
+        & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 37.5em) {
+    .slider {
+        width: 80%;
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .slider {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .slider {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    .slider {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 16px);
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+
+    &__item {
+        border: none;
+        background-color: #fff;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgb(229, 229, 229);
+        }
+
+        &--prev {
+            padding-block: 0.5rem;
+            padding-right: 1rem;
+            padding-left: 0.75rem;
+        }
+
+        &--next {
+            padding-block: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 0.75rem;
+
+            & img {
+                transform: rotate(180deg);
+            }
+        }
+
+        & img {
+            width: 10px;
+        }
+    }
+}
+
+.info {
+    text-align: center;
+    z-index: 2;
+
+    &__description {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $main-text;
+        margin-bottom: 1em;
+        line-height: 1.4em;
+        padding-top: 1.5em;
+        background-image: url(/images/pattern-quotes.svg);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position: top center;
+    }
+
+    &__name {
+        color: $main-text;
+        font-size: 1rem;
+    }
+
+    &__job {
+        font-weight: 500;
+        color: $subtitle;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    .info {
+        width: 70%;
+        text-align: left;
+
+        &__description {
+            font-size: 2.5rem;
+            background-position: 3em 0;
+            background-size: 15%;
+        }
+
+        &__name {
+            font-size: 1.25rem;
+            display: inline-block;
+        }
+
+        &__job {
+            font-size: 1.25rem;
+            display: inline-block;
+        }
+    }
+}
