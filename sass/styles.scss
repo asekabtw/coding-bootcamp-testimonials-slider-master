@@ -27,6 +27,7 @@ $subtitle: hsl(240, 18%, 77%);
 
 @media screen and (min-width: 90em) {
     .content {
+        background-size: 40%;
         &__wrapper {
             width: 80%;
             display: flex;
